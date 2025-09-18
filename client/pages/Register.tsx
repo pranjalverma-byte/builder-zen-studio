@@ -4,9 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Register() {
   const navigate = useNavigate();
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    navigate("/dashboard");
+    const form = e.currentTarget as HTMLFormElement;
+    const data = new FormData(form);
+    const username = String(data.get("username") || "");
+    const password = String(data.get("password") || "");
+    const confirm = String(data.get("confirm") || "");
+    if (username === "kronos" && password === "1234" && confirm === "1234") {
+      localStorage.setItem("auth_user", JSON.stringify({ username }));
+      navigate("/dashboard");
+    } else {
+      alert("Only username 'kronos' with password '1234' is allowed.");
+    }
   };
 
   return (
