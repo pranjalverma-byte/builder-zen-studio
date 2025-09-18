@@ -1,9 +1,11 @@
-import { FormEvent } from "react";
+import { FormEvent, useState } from "react";
 import "../styles/style.css";
 import { Link, useNavigate } from "react-router-dom";
+import { register } from "@/lib/auth";
 
 export default function Register() {
   const navigate = useNavigate();
+  const [error, setError] = useState("");
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget as HTMLFormElement;
@@ -11,11 +13,15 @@ export default function Register() {
     const username = String(data.get("username") || "");
     const password = String(data.get("password") || "");
     const confirm = String(data.get("confirm") || "");
-    if (username === "kronos" && password === "1234" && confirm === "1234") {
-      localStorage.setItem("auth_user", JSON.stringify({ username }));
+    if (password !== confirm) {
+      setError("Passwords do not match.");
+      return;
+    }
+    const res = register(username, password);
+    if (res.ok) {
       navigate("/dashboard");
     } else {
-      alert("Only username 'kronos' with password '1234' is allowed.");
+      setError(res.error || "Registration failed.");
     }
   };
 
@@ -41,6 +47,7 @@ export default function Register() {
             <input id="r-email" name="email" type="email" placeholder="Email (Optional)" className="input" autoComplete="email" />
           </div>
 
+          {error && <p style={{color:'#b91c1c', fontWeight:600}}>{error}</p>}
           <button className="btn-login" type="submit">CREATE ACCOUNT</button>
 
           <div style={{display:'grid', placeItems:'center', marginTop: 10}}>
