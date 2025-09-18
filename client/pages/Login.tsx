@@ -16,7 +16,7 @@ export default function Login() {
     if (login(u, p)) {
       navigate("/dashboard");
     } else {
-      setError(`Use username "${constants.VALID_USER}" and password "${constants.VALID_PASS}"`);
+      setError("Invalid credentials. You can register a new account on the Register page.");
     }
   };
 
