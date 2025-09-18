@@ -1,6 +1,6 @@
 import { FormEvent, useRef, useState } from "react";
 import "../styles/style.css";
-import { login, constants } from "@/lib/auth";
+import { login } from "@/lib/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
