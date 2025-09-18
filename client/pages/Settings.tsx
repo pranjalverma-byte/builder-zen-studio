@@ -8,6 +8,7 @@ export default function Settings() {
   const navigate = useNavigate();
   const [email, setEmail] = useState(localStorage.getItem("user_email") || "");
   const [msg, setMsg] = useState("");
+  const [avatar, setAvatar] = useState<string | null>(localStorage.getItem("user_avatar"));
 
   const changePassword = (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,6 +30,36 @@ export default function Settings() {
           <h2 className="section-title">Settings</h2>
           {msg && <p className="note success">{msg}</p>}
           <div className="settings-grid">
+            <div className="form-card">
+              <h3>Profile Picture</h3>
+              {avatar ? (
+                <img src={avatar} alt="Profile" className="avatar-lg" />
+              ) : (
+                <div className="avatar-lg placeholder" aria-hidden></div>
+              )}
+              <input className="input" type="file" accept="image/*" onChange={(e)=>{
+                const file = e.target.files?.[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = () => {
+                  const data = String(reader.result);
+                  localStorage.setItem("user_avatar", data);
+                  setAvatar(data);
+                  setMsg("Profile picture updated.");
+                  window.dispatchEvent(new Event("avatar:updated"));
+                };
+                reader.readAsDataURL(file);
+              }} />
+              {avatar && (
+                <button type="button" className="btn-outline" onClick={()=>{
+                  localStorage.removeItem("user_avatar");
+                  setAvatar(null);
+                  setMsg("Profile picture removed.");
+                  window.dispatchEvent(new Event("avatar:updated"));
+                }}>Remove Photo</button>
+              )}
+            </div>
+
             <form onSubmit={saveEmail} className="form-card">
               <h3>Account Email</h3>
               <input className="input" type="email" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
