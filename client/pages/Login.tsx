@@ -1,7 +1,7 @@
 import { FormEvent, useRef, useState } from "react";
 import "../styles/style.css";
 import { login } from "@/lib/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
