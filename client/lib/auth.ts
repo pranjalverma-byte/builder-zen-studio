@@ -29,7 +29,6 @@ export function register(username: string, password: string): { ok: boolean; err
   }
   users[u] = password;
   saveUsers(users);
-  localStorage.setItem(AUTH_KEY, JSON.stringify({ username: u }));
   return { ok: true };
 }
 
