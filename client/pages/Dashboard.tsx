@@ -1,19 +1,26 @@
 import "../styles/style.css";
+import { getUser, logout } from "@/lib/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
+  const navigate = useNavigate();
+  const user = getUser();
+  const onLogout = () => { logout(); navigate("/login"); };
+
   return (
     <main className="dashboard-bg">
       <section className="dash-frame">
         <aside className="dash-sidebar">
           <div className="dash-user">
             <div className="avatar" aria-hidden></div>
-            <div className="user-name">Alex Chen</div>
+            <div className="user-name">{user ?? "User"}</div>
           </div>
           <nav className="dash-nav">
             <a href="#" onClick={(e)=>e.preventDefault()}>Settings</a>
             <a href="#" onClick={(e)=>e.preventDefault()}>Connectivity</a>
             <a href="#" onClick={(e)=>e.preventDefault()}>Support</a>
             <a href="#" onClick={(e)=>e.preventDefault()}>Emergency Contacts</a>
+            <button onClick={onLogout} className="btn-logout">Logout</button>
           </nav>
         </aside>
 
