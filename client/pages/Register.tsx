@@ -19,7 +19,7 @@ export default function Register() {
     }
     const res = register(username, password);
     if (res.ok) {
-      navigate("/dashboard");
+      navigate("/login", { replace: true });
     } else {
       setError(res.error || "Registration failed.");
     }
