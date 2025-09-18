@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { getUser, logout } from "@/lib/auth";
 import "../styles/style.css";
@@ -8,11 +8,25 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   const onLogout = () => { logout(); navigate("/login"); };
 
+  const [avatar, setAvatar] = useState<string | null>(null);
+  useEffect(() => {
+    const load = () => setAvatar(localStorage.getItem("user_avatar"));
+    load();
+    const handler = () => load();
+    // custom event fired by settings when avatar changes
+    window.addEventListener("avatar:updated" as any, handler as any);
+    return () => window.removeEventListener("avatar:updated" as any, handler as any);
+  }, []);
+
   return (
     <section className="dash-frame">
       <aside className="dash-sidebar">
         <div className="dash-user">
-          <div className="avatar" aria-hidden></div>
+          {avatar ? (
+            <img src={avatar} alt="Profile" className="avatar-img" />
+          ) : (
+            <div className="avatar" aria-hidden></div>
+          )}
           <div className="user-name">{user}</div>
         </div>
         <nav className="dash-nav">
