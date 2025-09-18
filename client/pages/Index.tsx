@@ -1,62 +1,59 @@
-import { DemoResponse } from "@shared/api";
-import { useEffect, useState } from "react";
+import { FormEvent } from "react";
+import "../styles/style.css";
 
 export default function Index() {
-  const [exampleFromServer, setExampleFromServer] = useState("");
-  // Fetch users on component mount
-  useEffect(() => {
-    fetchDemo();
-  }, []);
-
-  // Example of how to fetch data from the server (if needed)
-  const fetchDemo = async () => {
-    try {
-      const response = await fetch("/api/demo");
-      const data = (await response.json()) as DemoResponse;
-      setExampleFromServer(data.message);
-    } catch (error) {
-      console.error("Error fetching hello:", error);
-    }
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
-      <div className="text-center">
-        {/* TODO: FUSION_GENERATION_APP_PLACEHOLDER replace everything here with the actual app! */}
-        <h1 className="text-2xl font-semibold text-slate-800 flex items-center justify-center gap-3">
-          <svg
-            className="animate-spin h-8 w-8 text-slate-400"
-            viewBox="0 0 50 50"
-          >
-            <circle
-              className="opacity-30"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
+    <main className="login-bg">
+      <section className="glass-card glass-card-shadow">
+        <h1 className="login-title text-[28px] tracking-[0.2em]">LOGIN</h1>
+        <form onSubmit={onSubmit} className="space-y-4">
+          <div className="field">
+            <label htmlFor="username" className="sr-only">
+              Username
+            </label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              placeholder="Username"
+              className="input"
+              autoComplete="username"
+              required
             />
-            <circle
-              className="text-slate-600"
-              cx="25"
-              cy="25"
-              r="20"
-              stroke="currentColor"
-              strokeWidth="5"
-              fill="none"
-              strokeDasharray="100"
-              strokeDashoffset="75"
+            <span aria-hidden className="accent" />
+          </div>
+
+          <div className="field">
+            <label htmlFor="password" className="sr-only">
+              Password
+            </label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="Password"
+              className="input"
+              autoComplete="current-password"
+              required
             />
-          </svg>
-          Generating your app...
-        </h1>
-        <p className="mt-4 text-slate-600 max-w-md">
-          Watch the chat on the left for updates that might need your attention
-          to finish generating
-        </p>
-        <p className="mt-4 hidden max-w-md">{exampleFromServer}</p>
-      </div>
-    </div>
+            <span aria-hidden className="accent" />
+          </div>
+
+          <div className="options">
+            <label className="inline-flex items-center select-none">
+              <input type="checkbox" className="checkbox" />
+              Remember me
+            </label>
+            <a href="#" onClick={(e)=>e.preventDefault()}>Forgot password?</a>
+          </div>
+
+          <button className="btn-login" type="submit">Login</button>
+        </form>
+      </section>
+    </main>
   );
 }
