@@ -1,9 +1,23 @@
-import { FormEvent } from "react";
+import { FormEvent, useRef, useState } from "react";
 import "../styles/style.css";
+import { login, constants } from "@/lib/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const uRef = useRef<HTMLInputElement>(null);
+  const pRef = useRef<HTMLInputElement>(null);
+  const [error, setError] = useState("");
+
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
+    const u = uRef.current?.value || "";
+    const p = pRef.current?.value || "";
+    if (login(u, p)) {
+      navigate("/dashboard");
+    } else {
+      setError(`Use username "${constants.VALID_USER}" and password "${constants.VALID_PASS}"`);
+    }
   };
 
   return (
@@ -23,6 +37,7 @@ export default function Login() {
               className="input"
               autoComplete="username"
               required
+              ref={uRef}
             />
             <span aria-hidden className="accent" />
           </div>
@@ -39,6 +54,7 @@ export default function Login() {
               className="input"
               autoComplete="current-password"
               required
+              ref={pRef}
             />
             <span aria-hidden className="accent" />
           </div>
@@ -51,6 +67,7 @@ export default function Login() {
             <a href="#" onClick={(e)=>e.preventDefault()}>Forgot password?</a>
           </div>
 
+          {error && <p style={{color:"#b91c1c", fontWeight:600}}>{error}</p>}
           <button className="btn-login" type="submit">Login</button>
         </form>
       </section>
