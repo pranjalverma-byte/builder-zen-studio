@@ -1,6 +1,7 @@
 import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import { useEffect, useState } from "react";
+import Page from "@/components/Page";
 
 type Contact = { id: string; name: string; phone: string };
 const KEY = "emergency_contacts";
@@ -28,7 +29,7 @@ export default function EmergencyContacts() {
   const remove = (id: string) => setContacts(contacts.filter(c=>c.id!==id));
 
   return (
-    <main className="dashboard-bg">
+    <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="card wide" style={{gridColumn:'span 3'}}>
           <h2 className="section-title">Emergency Contacts</h2>
@@ -56,6 +57,6 @@ export default function EmergencyContacts() {
           </div>
         </div>
       </DashboardLayout>
-    </main>
+    </Page>
   );
 }
