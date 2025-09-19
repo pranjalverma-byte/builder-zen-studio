@@ -26,7 +26,7 @@ export default function Settings() {
   return (
     <main className="dashboard-bg">
       <DashboardLayout>
-        <div className="card wide" style={{gridColumn:'span 3'}}>
+        <div className="card settings-container">
           <h2 className="section-title">Settings</h2>
           {msg && <p className="note success">{msg}</p>}
           <div className="settings-grid">
@@ -72,12 +72,6 @@ export default function Settings() {
               <input className="input" type="password" placeholder="New Password (min 4)" minLength={4} required />
               <button className="btn-login" type="submit">Update Password</button>
             </form>
-
-            <div className="form-card">
-              <h3>Logout</h3>
-              <p className="muted">Sign out of this device.</p>
-              <button className="btn-login" onClick={onLogout} type="button">Logout</button>
-            </div>
           </div>
         </div>
       </DashboardLayout>
