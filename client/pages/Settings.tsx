@@ -3,6 +3,7 @@ import "../styles/style.css";
 import { useState } from "react";
 import { logout, getUser } from "@/lib/auth";
 import { useNavigate } from "react-router-dom";
+import Page from "@/components/Page";
 
 export default function Settings() {
   const navigate = useNavigate();
@@ -43,7 +44,7 @@ export default function Settings() {
   const onLogout = () => { logout(); navigate("/login"); };
 
   return (
-    <main className="dashboard-bg">
+    <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="card settings-container">
           <h2 className="section-title">Settings</h2>
@@ -83,6 +84,6 @@ export default function Settings() {
           </div>
         </div>
       </DashboardLayout>
-    </main>
+    </Page>
   );
 }
