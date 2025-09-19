@@ -1,10 +1,11 @@
 import "../styles/style.css";
 import "../styles/style.css";
 import DashboardLayout from "@/components/DashboardLayout";
+import Page from "@/components/Page";
 
 export default function Dashboard() {
   return (
-    <main className="dashboard-bg">
+    <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid">
           <article className="card metric">
@@ -42,6 +43,6 @@ export default function Dashboard() {
           </article>
         </div>
       </DashboardLayout>
-    </main>
+    </Page>
   );
 }
