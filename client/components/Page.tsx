@@ -2,7 +2,10 @@ import { motion } from "framer-motion";
 import { PropsWithChildren } from "react";
 import { cn } from "@/lib/utils";
 
-export default function Page({ className, children }: PropsWithChildren<{ className?: string }>) {
+export default function Page({
+  className,
+  children,
+}: PropsWithChildren<{ className?: string }>) {
   return (
     <motion.main
       className={cn(className)}

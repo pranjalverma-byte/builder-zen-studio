@@ -33,13 +33,21 @@ export default function Dashboard() {
               <div>10:00 PM - 6:00 AM</div>
             </div>
             <div className="sleep-timeline" aria-hidden></div>
-            <div className="row"><strong>8 Hours 30 Mins</strong><span className="moon" aria-hidden>🌙</span></div>
+            <div className="row">
+              <strong>8 Hours 30 Mins</strong>
+              <span className="moon" aria-hidden>
+                🌙
+              </span>
+            </div>
           </article>
 
           <article className="card wide">
             <header>Stress & Anxiety</header>
             <div className="rings" aria-hidden></div>
-            <div className="row"><strong>LOW</strong><span>Mindfulness Score: 75</span></div>
+            <div className="row">
+              <strong>LOW</strong>
+              <span>Mindfulness Score: 75</span>
+            </div>
           </article>
         </div>
       </DashboardLayout>

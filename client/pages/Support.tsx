@@ -6,7 +6,7 @@ export default function Support() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
-        <div className="card wide" style={{gridColumn:'span 3'}}>
+        <div className="card wide" style={{ gridColumn: "span 3" }}>
           <h2 className="section-title">Support</h2>
           <div className="support">
             <p>Contact our Care Team</p>

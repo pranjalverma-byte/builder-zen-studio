@@ -29,11 +29,46 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<Index />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
-        <Route path="/dashboard/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
-        <Route path="/dashboard/connectivity" element={<ProtectedRoute><Connectivity /></ProtectedRoute>} />
-        <Route path="/dashboard/support" element={<ProtectedRoute><Support /></ProtectedRoute>} />
-        <Route path="/dashboard/emergency-contacts" element={<ProtectedRoute><EmergencyContacts /></ProtectedRoute>} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/connectivity"
+          element={
+            <ProtectedRoute>
+              <Connectivity />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/support"
+          element={
+            <ProtectedRoute>
+              <Support />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/emergency-contacts"
+          element={
+            <ProtectedRoute>
+              <EmergencyContacts />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

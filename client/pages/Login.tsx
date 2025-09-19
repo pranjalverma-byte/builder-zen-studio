@@ -17,7 +17,9 @@ export default function Login() {
     if (login(u, p)) {
       navigate("/dashboard");
     } else {
-      setError("Invalid credentials. You can register a new account on the Register page.");
+      setError(
+        "Invalid credentials. You can register a new account on the Register page.",
+      );
     }
   };
 
@@ -65,14 +67,32 @@ export default function Login() {
               <input type="checkbox" className="checkbox" />
               Remember me
             </label>
-            <a href="#" onClick={(e)=>e.preventDefault()}>Forgot password?</a>
+            <a href="#" onClick={(e) => e.preventDefault()}>
+              Forgot password?
+            </a>
           </div>
 
-          {error && <p style={{color:"#b91c1c", fontWeight:600}}>{error}</p>}
-          <button className="btn-login" type="submit">Login</button>
-          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap: 10, justifyItems:'center', marginTop: 10}}>
-            <Link to="/" className="pill-link">Home</Link>
-            <Link to="/register" className="pill-link">Register</Link>
+          {error && (
+            <p style={{ color: "#b91c1c", fontWeight: 600 }}>{error}</p>
+          )}
+          <button className="btn-login" type="submit">
+            Login
+          </button>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "1fr 1fr",
+              gap: 10,
+              justifyItems: "center",
+              marginTop: 10,
+            }}
+          >
+            <Link to="/" className="pill-link">
+              Home
+            </Link>
+            <Link to="/register" className="pill-link">
+              Register
+            </Link>
           </div>
         </form>
       </section>
