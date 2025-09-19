@@ -8,12 +8,18 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   const navigate = useNavigate();
   const onLogout = () => { logout(); navigate("/login"); };
 
+  const initial = (user?.trim?.()[0] || "U").toUpperCase();
+  const colorFromName = (name: string) => {
+    let h = 0;
+    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) % 360;
+    return `hsl(${h} 60% 50%)`;
+  };
+
   const [avatar, setAvatar] = useState<string | null>(null);
   useEffect(() => {
     const load = () => setAvatar(localStorage.getItem("user_avatar"));
     load();
     const handler = () => load();
-    // custom event fired by settings when avatar changes
     window.addEventListener("avatar:updated" as any, handler as any);
     return () => window.removeEventListener("avatar:updated" as any, handler as any);
   }, []);
@@ -25,7 +31,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
           {avatar ? (
             <img src={avatar} alt="Profile" className="avatar-img" />
           ) : (
-            <div className="avatar" aria-hidden></div>
+            <div className="avatar-default" style={{ background: colorFromName(user), color: '#fff' }} aria-hidden>{initial}</div>
           )}
           <div className="user-name">{user}</div>
         </div>
