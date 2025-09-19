@@ -2,6 +2,7 @@ import { FormEvent, useRef, useState } from "react";
 import "../styles/style.css";
 import { login } from "@/lib/auth";
 import { Link, useNavigate } from "react-router-dom";
+import Page from "@/components/Page";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function Login() {
   };
 
   return (
-    <main className="login-bg">
+    <Page className="login-bg">
       <section className="glass-card glass-card-shadow">
         <h1 className="login-title text-[28px] tracking-[0.2em]">LOGIN</h1>
         <form onSubmit={onSubmit} className="space-y-4">
@@ -75,6 +76,6 @@ export default function Login() {
           </div>
         </form>
       </section>
-    </main>
+    </Page>
   );
 }
