@@ -69,7 +69,8 @@ export default function Login() {
 
           {error && <p style={{color:"#b91c1c", fontWeight:600}}>{error}</p>}
           <button className="btn-login" type="submit">Login</button>
-          <div style={{display:'grid', placeItems:'center', marginTop: 10}}>
+          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap: 10, justifyItems:'center', marginTop: 10}}>
+            <Link to="/" className="pill-link">Home</Link>
             <Link to="/register" className="pill-link">Register</Link>
           </div>
         </form>
