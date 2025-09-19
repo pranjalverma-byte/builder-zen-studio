@@ -79,7 +79,7 @@
   width: 120px;
   height: 2px;
   border-radius: 2px;
-  background: linear-gradient(90deg, hsl(var(--brand-orange-1)), hsl(var(--brand-orange-2)) 85%);
+  background: linear-gradient(90deg, #000000, #000000);
   pointer-events: none;
 }
 
