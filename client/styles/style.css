@@ -114,6 +114,11 @@
 .checkbox:checked{ background: hsl(var(--brand-green-1)); border-color: hsl(var(--brand-green-1)); }
 .checkbox:checked::after{ content: ""; width: 9px; height: 9px; clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 20%, 80% 0, 43% 62%); background: white; }
 
+/* Route progress bar */
+.route-progress{ position:fixed; top:0; left:0; height:3px; width:100%; z-index:9999; background: linear-gradient(90deg, rgba(255,255,255,.1), rgba(255,255,255,.8)); overflow:hidden; }
+.route-progress::after{ content:""; position:absolute; inset:0; background: linear-gradient(90deg, hsl(var(--brand-green-1)), #fff); transform: translateX(-100%); animation: routeSlide .7s ease-out forwards; }
+@keyframes routeSlide{ to{ transform: translateX(0%);} }
+
 /* Small glow under the card */
 .glass-card-shadow {
   position: relative;
