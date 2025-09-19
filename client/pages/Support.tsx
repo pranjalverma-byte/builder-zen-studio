@@ -1,9 +1,10 @@
 import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
+import Page from "@/components/Page";
 
 export default function Support() {
   return (
-    <main className="dashboard-bg">
+    <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="card wide" style={{gridColumn:'span 3'}}>
           <h2 className="section-title">Support</h2>
@@ -17,6 +18,6 @@ export default function Support() {
           </div>
         </div>
       </DashboardLayout>
-    </main>
+    </Page>
   );
 }
