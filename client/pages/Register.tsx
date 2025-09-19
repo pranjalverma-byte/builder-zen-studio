@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import "../styles/style.css";
 import { Link, useNavigate } from "react-router-dom";
 import { register } from "@/lib/auth";
+import Page from "@/components/Page";
 
 export default function Register() {
   const navigate = useNavigate();
@@ -26,7 +27,7 @@ export default function Register() {
   };
 
   return (
-    <main className="login-bg">
+    <Page className="login-bg">
       <section className="glass-card glass-card-shadow" style={{borderRadius: 32}}>
         <h1 className="login-title text-[28px] tracking-[0.2em]">REGISTER</h1>
         <form onSubmit={onSubmit} className="space-y-4">
@@ -60,6 +61,6 @@ export default function Register() {
           </p>
         </form>
       </section>
-    </main>
+    </Page>
   );
 }
