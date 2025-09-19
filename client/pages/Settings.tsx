@@ -10,6 +10,20 @@ export default function Settings() {
   const [msg, setMsg] = useState("");
   const [avatar, setAvatar] = useState<string | null>(localStorage.getItem("user_avatar"));
 
+  const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const data = String(reader.result);
+      localStorage.setItem("user_avatar", data);
+      setAvatar(data);
+      setMsg("Profile picture updated.");
+      window.dispatchEvent(new Event("avatar:updated"));
+    };
+    reader.readAsDataURL(file);
+  };
+
   const changePassword = (e: React.FormEvent) => {
     e.preventDefault();
     setMsg("Password updated.");
@@ -37,19 +51,8 @@ export default function Settings() {
               ) : (
                 <div className="avatar-lg placeholder" aria-hidden></div>
               )}
-              <input className="input" type="file" accept="image/*" onChange={(e)=>{
-                const file = e.target.files?.[0];
-                if (!file) return;
-                const reader = new FileReader();
-                reader.onload = () => {
-                  const data = String(reader.result);
-                  localStorage.setItem("user_avatar", data);
-                  setAvatar(data);
-                  setMsg("Profile picture updated.");
-                  window.dispatchEvent(new Event("avatar:updated"));
-                };
-                reader.readAsDataURL(file);
-              }} />
+              <input id="avatar-file" className="file-hidden" type="file" accept="image/*" onChange={onFile} />
+              <label htmlFor="avatar-file" className="btn-outline" style={{display:'inline-flex',alignItems:'center',justifyContent:'center'}}>Browse</label>
               {avatar && (
                 <button type="button" className="btn-outline" onClick={()=>{
                   localStorage.removeItem("user_avatar");
