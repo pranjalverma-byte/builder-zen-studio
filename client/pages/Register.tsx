@@ -50,7 +50,8 @@ export default function Register() {
           {error && <p style={{color:'#b91c1c', fontWeight:600}}>{error}</p>}
           <button className="btn-login" type="submit">CREATE ACCOUNT</button>
 
-          <div style={{display:'grid', placeItems:'center', marginTop: 10}}>
+          <div style={{display:'grid', gridTemplateColumns:'1fr 1fr', gap: 10, justifyItems:'center', marginTop: 10}}>
+            <Link to="/" className="pill-link">HOME</Link>
             <Link to="/login" className="pill-link">LOGIN</Link>
           </div>
 
