@@ -170,7 +170,9 @@
 .muted{ color: rgba(0,0,0,.6); }
 .note.success{ color:#166534; }
 
-.settings-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:16px; }
+.settings-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:16px; }
+@media (max-width: 920px){ .settings-grid{ grid-template-columns: 1fr; } }
+.settings-container{ max-width: 900px; }
 .form-card{ background: rgba(255,255,255,.7); border-radius:12px; padding:14px; display:grid; gap:10px; box-shadow: 0 10px 30px rgba(0,0,0,.12), inset 0 1px 0 rgba(255,255,255,.7); }
 
 /* Connectivity pulse */
