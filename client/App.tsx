@@ -21,6 +21,25 @@ import { AnimatePresence } from "framer-motion";
 
 const queryClient = new QueryClient();
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Index />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="/dashboard/settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+        <Route path="/dashboard/connectivity" element={<ProtectedRoute><Connectivity /></ProtectedRoute>} />
+        <Route path="/dashboard/support" element={<ProtectedRoute><Support /></ProtectedRoute>} />
+        <Route path="/dashboard/emergency-contacts" element={<ProtectedRoute><EmergencyContacts /></ProtectedRoute>} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
