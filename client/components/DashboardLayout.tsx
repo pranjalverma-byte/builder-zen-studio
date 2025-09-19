@@ -36,7 +36,7 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
           <div className="user-name">{user}</div>
         </div>
         <nav className="dash-nav">
-          <NavLink to="/dashboard" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Overview</NavLink>
+          <NavLink to="/dashboard" end className={({isActive})=>isActive?"dash-link active":"dash-link"}>Dashboard</NavLink>
           <NavLink to="/dashboard/settings" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Settings</NavLink>
           <NavLink to="/dashboard/connectivity" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Connectivity</NavLink>
           <NavLink to="/dashboard/support" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Support</NavLink>
