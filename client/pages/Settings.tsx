@@ -1,7 +1,7 @@
 import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import { useState } from "react";
-import { logout } from "@/lib/auth";
+import { logout, getUser } from "@/lib/auth";
 import { useNavigate } from "react-router-dom";
 
 export default function Settings() {
@@ -9,6 +9,11 @@ export default function Settings() {
   const [email, setEmail] = useState(localStorage.getItem("user_email") || "");
   const [msg, setMsg] = useState("");
   const [avatar, setAvatar] = useState<string | null>(localStorage.getItem("user_avatar"));
+  const user = getUser() ?? "User";
+  const initial = (user?.trim?.()[0] || "U").toUpperCase();
+  const colorFromName = (name: string) => {
+    let h = 0; for (let i=0;i<name.length;i++) h = (h*31 + name.charCodeAt(i)) % 360; return `hsl(${h} 60% 50%)`;
+  };
 
   const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -49,7 +54,7 @@ export default function Settings() {
               {avatar ? (
                 <img src={avatar} alt="Profile" className="avatar-lg" />
               ) : (
-                <div className="avatar-lg placeholder" aria-hidden></div>
+                <div className="avatar-default-lg" style={{ background: colorFromName(user), color:'#fff', display:'grid', placeItems:'center', fontSize:40, fontWeight:800 }} aria-hidden>{initial}</div>
               )}
               <input id="avatar-file" className="file-hidden" type="file" accept="image/*" onChange={onFile} />
               <label htmlFor="avatar-file" className="btn-outline" style={{display:'inline-flex',alignItems:'center',justifyContent:'center'}}>Browse</label>
