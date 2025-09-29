@@ -1,12 +1,18 @@
 import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import Page from "@/components/Page";
+import { Link } from "react-router-dom";
+import SensorChart from "@/components/SensorChart";
 
 export default function SleepSchedule() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid">
+          <div style={{ gridColumn: "1 / -1" }}>
+            <Link to="/dashboard" className="btn-outline">← Back to Dashboard</Link>
+          </div>
+
           <article className="card wide">
             <header>Sleep Schedule</header>
             <div className="row">
@@ -29,6 +35,11 @@ export default function SleepSchedule() {
               <span className="sub">Deep Sleep</span>
               <strong>1h 40m</strong>
             </div>
+          </article>
+
+          <article className="card wide">
+            <header>Live Trend</header>
+            <SensorChart color="#2f6b4b" />
           </article>
         </div>
       </DashboardLayout>
