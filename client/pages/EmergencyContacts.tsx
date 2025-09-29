@@ -33,54 +33,56 @@ export default function EmergencyContacts() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
-        <div className="card wide" style={{ gridColumn: "span 3" }}>
-          <h2 className="section-title">Emergency Contacts</h2>
+        <div className="dash-grid">
+          <div className="card wide">
+            <h2 className="section-title">Emergency Contacts</h2>
 
-          <div className="contacts">
-            <div className="contacts-form">
-              <input
-                className="input"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-              <input
-                className="input"
-                placeholder="Phone"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-              />
-              <button
-                className="btn-login"
-                onClick={add}
-                type="button"
-                disabled={!name || !phone || contacts.length >= 3}
-              >
-                Add
-              </button>
-              <p className="muted">Up to 3 contacts.</p>
+            <div className="contacts">
+              <div className="contacts-form">
+                <input
+                  className="input"
+                  placeholder="Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+                <input
+                  className="input"
+                  placeholder="Phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+                <button
+                  className="btn-login"
+                  onClick={add}
+                  type="button"
+                  disabled={!name || !phone || contacts.length >= 3}
+                >
+                  Add
+                </button>
+                <p className="muted">Up to 3 contacts.</p>
+              </div>
+
+              <ul className="contacts-list">
+                {contacts.map((c) => (
+                  <li key={c.id} className="contact-item">
+                    <div>
+                      <strong>{c.name}</strong>
+                      <div className="muted">{c.phone}</div>
+                    </div>
+                    <button
+                      className="remove"
+                      onClick={() => remove(c.id)}
+                      aria-label={`Remove ${c.name}`}
+                    >
+                      Remove
+                    </button>
+                  </li>
+                ))}
+                {contacts.length === 0 && (
+                  <li className="muted">No contacts added yet.</li>
+                )}
+              </ul>
             </div>
-
-            <ul className="contacts-list">
-              {contacts.map((c) => (
-                <li key={c.id} className="contact-item">
-                  <div>
-                    <strong>{c.name}</strong>
-                    <div className="muted">{c.phone}</div>
-                  </div>
-                  <button
-                    className="remove"
-                    onClick={() => remove(c.id)}
-                    aria-label={`Remove ${c.name}`}
-                  >
-                    Remove
-                  </button>
-                </li>
-              ))}
-              {contacts.length === 0 && (
-                <li className="muted">No contacts added yet.</li>
-              )}
-            </ul>
           </div>
         </div>
       </DashboardLayout>
