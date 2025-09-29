@@ -1,12 +1,18 @@
 import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import Page from "@/components/Page";
+import { Link } from "react-router-dom";
+import SensorChart from "@/components/SensorChart";
 
 export default function Accelerometer() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid">
+          <div style={{ gridColumn: "1 / -1" }}>
+            <Link to="/dashboard" className="btn-outline">← Back to Dashboard</Link>
+          </div>
+
           <article className="card metric">
             <header>Accelerometer</header>
             <div className="icon-run" aria-hidden></div>
@@ -28,6 +34,11 @@ export default function Accelerometer() {
               <span>Other</span>
               <strong>1,430 steps</strong>
             </div>
+          </article>
+
+          <article className="card wide">
+            <header>Live Trend</header>
+            <SensorChart color="#2f6b4b" />
           </article>
         </div>
       </DashboardLayout>
