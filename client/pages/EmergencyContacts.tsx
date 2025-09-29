@@ -34,7 +34,7 @@ export default function EmergencyContacts() {
     <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid">
-          <div className="card wide">
+          <div className="card wide" style={{ gridColumn: "1 / -1" }}>
             <h2 className="section-title">Emergency Contacts</h2>
 
             <div className="contacts">
