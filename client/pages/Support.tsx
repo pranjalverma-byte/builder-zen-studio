@@ -6,15 +6,17 @@ export default function Support() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
-        <div className="card wide" style={{ gridColumn: "span 3" }}>
-          <h2 className="section-title">Support</h2>
-          <div className="support">
-            <p>Contact our Care Team</p>
-            <ul>
-              <li>Email: care@auramed.dev (Mon–Fri, 9:00 AM – 6:00 PM IST)</li>
-              <li>Phone: +91 98765 43210 (Weekdays, 10:00 AM – 5:00 PM)</li>
-              <li>Response time: under 24 hours</li>
-            </ul>
+        <div className="dash-grid">
+          <div className="card wide">
+            <h2 className="section-title">Support</h2>
+            <div className="support">
+              <p>Contact our Care Team</p>
+              <ul>
+                <li>Email: care@auramed.dev (Mon–Fri, 9:00 AM – 6:00 PM IST)</li>
+                <li>Phone: +91 98765 43210 (Weekdays, 10:00 AM – 5:00 PM)</li>
+                <li>Response time: under 24 hours</li>
+              </ul>
+            </div>
           </div>
         </div>
       </DashboardLayout>
