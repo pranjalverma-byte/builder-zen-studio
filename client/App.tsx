@@ -14,6 +14,11 @@ import Settings from "./pages/Settings";
 import Connectivity from "./pages/Connectivity";
 import Support from "./pages/Support";
 import EmergencyContacts from "./pages/EmergencyContacts";
+import Spo2 from "./pages/Spo2";
+import Accelerometer from "./pages/Accelerometer";
+import Temperature from "./pages/Temperature";
+import SleepSchedule from "./pages/SleepSchedule";
+import StressAnxiety from "./pages/StressAnxiety";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 import RouteProgress from "@/components/RouteProgress";
@@ -42,6 +47,46 @@ const AnimatedRoutes = () => {
           element={
             <ProtectedRoute>
               <Settings />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/spo2"
+          element={
+            <ProtectedRoute>
+              <Spo2 />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/accelerometer"
+          element={
+            <ProtectedRoute>
+              <Accelerometer />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/temperature"
+          element={
+            <ProtectedRoute>
+              <Temperature />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/sleep"
+          element={
+            <ProtectedRoute>
+              <SleepSchedule />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/stress-anxiety"
+          element={
+            <ProtectedRoute>
+              <StressAnxiety />
             </ProtectedRoute>
           }
         />
