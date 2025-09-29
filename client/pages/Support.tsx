@@ -7,7 +7,7 @@ export default function Support() {
     <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid">
-          <div className="card wide">
+          <div className="card wide" style={{ gridColumn: "1 / -1" }}>
             <h2 className="section-title">Support</h2>
             <div className="support">
               <p>Contact our Care Team</p>
