@@ -6,11 +6,12 @@ export default function Connectivity() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
-        <div className="dash-grid">
+        <div className="dash-grid" style={{ minHeight: "65svh", gridAutoRows: "1fr" }}>
           <div
             className="card wide"
             style={{
               gridColumn: "1 / -1",
+              height: "100%",
               display: "grid",
               placeItems: "center",
               padding: "40px",
