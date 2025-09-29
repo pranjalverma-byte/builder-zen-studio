@@ -10,12 +10,12 @@ export default function StressAnxiety() {
       <DashboardLayout>
         <div className="dash-grid">
           <div style={{ gridColumn: "1 / -1" }}>
-            <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ width: 52, height: 52, fontSize: 24, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
+            <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ width: 60, height: 60, fontSize: 28, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
           </div>
 
           <article className="card wide">
             <header>Stress & Anxiety</header>
-            <SensorChart height={100} color="#2f6b4b" points={50} />
+            <SensorChart height={100} points={50} />
             <div className="row">
               <strong>LOW</strong>
               <span>Mindfulness Score: 75</span>
