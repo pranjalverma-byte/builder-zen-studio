@@ -10,18 +10,18 @@ export default function Temperature() {
       <DashboardLayout>
         <div className="dash-grid">
           <div style={{ gridColumn: "1 / -1" }}>
-            <Link to="/dashboard" className="btn-outline" aria-label="Back">&lt;</Link>
+            <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ width: 52, height: 52, fontSize: 24, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
           </div>
 
           <article className="card metric">
             <header>Temperature</header>
             <div className="big">98.6°F</div>
-            <div className="trend" aria-hidden></div>
+            <SensorChart height={80} color="#ff6a3d" points={40} />
           </article>
 
           <article className="card wide">
             <header>24h Trend</header>
-            <div className="sleep-timeline" aria-hidden></div>
+            <SensorChart height={120} color="#ff6a3d" points={50} />
             <div className="row">
               <span className="sub">High</span>
               <strong>99.2°F</strong>

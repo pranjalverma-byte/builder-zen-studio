@@ -10,14 +10,14 @@ export default function Accelerometer() {
       <DashboardLayout>
         <div className="dash-grid">
           <div style={{ gridColumn: "1 / -1" }}>
-            <Link to="/dashboard" className="btn-outline" aria-label="Back">&lt;</Link>
+            <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ width: 52, height: 52, fontSize: 24, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
           </div>
 
           <article className="card metric">
             <header>Accelerometer</header>
             <div className="icon-run" aria-hidden></div>
             <div className="sub">Steps: 7,890</div>
-            <div className="bars" aria-hidden></div>
+            <SensorChart height={80} color="#2f6b4b" points={40} />
           </article>
 
           <article className="card wide">

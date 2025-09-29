@@ -10,7 +10,7 @@ export default function SleepSchedule() {
       <DashboardLayout>
         <div className="dash-grid">
           <div style={{ gridColumn: "1 / -1" }}>
-            <Link to="/dashboard" className="btn-outline" aria-label="Back">&lt;</Link>
+            <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ width: 52, height: 52, fontSize: 24, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
           </div>
 
           <article className="card wide">
@@ -18,7 +18,7 @@ export default function SleepSchedule() {
             <div className="row">
               <div>10:00 PM - 6:00 AM</div>
             </div>
-            <div className="sleep-timeline" aria-hidden></div>
+            <SensorChart height={100} color="#2f6b4b" points={50} />
             <div className="row">
               <strong>8 Hours 30 Mins</strong>
               <span className="moon" aria-hidden>🌙</span>
