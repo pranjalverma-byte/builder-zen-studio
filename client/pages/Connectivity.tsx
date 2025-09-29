@@ -10,6 +10,7 @@ export default function Connectivity() {
           <div
             className="card wide"
             style={{
+              gridColumn: "1 / -1",
               display: "grid",
               placeItems: "center",
               padding: "40px",
