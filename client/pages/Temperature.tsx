@@ -10,7 +10,7 @@ export default function Temperature() {
       <DashboardLayout>
         <div className="dash-grid">
           <div style={{ gridColumn: "1 / -1" }}>
-            <Link to="/dashboard" className="btn-outline">← Back to Dashboard</Link>
+            <Link to="/dashboard" className="btn-outline" aria-label="Back">&lt;</Link>
           </div>
 
           <article className="card metric">
