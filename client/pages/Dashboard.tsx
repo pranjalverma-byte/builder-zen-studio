@@ -9,26 +9,26 @@ export default function Dashboard() {
     <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid">
-          <article className="card metric">
+          <Link to="/dashboard/spo2" className="card metric" style={{ textDecoration: "none" }}>
             <header>SpO₂</header>
             <div className="big">98%</div>
             <div className="mini-graph" aria-hidden></div>
-          </article>
+          </Link>
 
-          <article className="card metric">
+          <Link to="/dashboard/accelerometer" className="card metric" style={{ textDecoration: "none" }}>
             <header>Accelerometer</header>
             <div className="icon-run" aria-hidden></div>
             <div className="sub">Steps: 7,890</div>
             <div className="bars" aria-hidden></div>
-          </article>
+          </Link>
 
-          <article className="card metric">
+          <Link to="/dashboard/temperature" className="card metric" style={{ textDecoration: "none" }}>
             <header>Temperature</header>
             <div className="big">98.6°F</div>
             <div className="trend" aria-hidden></div>
-          </article>
+          </Link>
 
-          <article className="card wide">
+          <Link to="/dashboard/sleep" className="card wide" style={{ textDecoration: "none" }}>
             <header>Sleep Schedule</header>
             <div className="row">
               <div>10:00 PM - 6:00 AM</div>
@@ -40,16 +40,16 @@ export default function Dashboard() {
                 🌙
               </span>
             </div>
-          </article>
+          </Link>
 
-          <article className="card wide">
+          <Link to="/dashboard/stress-anxiety" className="card wide" style={{ textDecoration: "none" }}>
             <header>Stress & Anxiety</header>
             <div className="rings" aria-hidden></div>
             <div className="row">
               <strong>LOW</strong>
               <span>Mindfulness Score: 75</span>
             </div>
-          </article>
+          </Link>
         </div>
       </DashboardLayout>
     </Page>
