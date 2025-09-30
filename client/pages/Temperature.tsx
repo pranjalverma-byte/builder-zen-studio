@@ -8,10 +8,8 @@ export default function Temperature() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
-        <div className="dash-grid">
-          <div style={{ gridColumn: "1 / -1" }}>
-            <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ width: 60, height: 60, fontSize: 28, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
-          </div>
+        <div className="dash-grid" style={{ position: "relative" }}>
+          <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ position: "absolute", top: 0, left: 0, zIndex: 1, width: 60, height: 60, fontSize: 28, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
 
           <article className="card metric">
             <header>Temperature</header>
@@ -34,7 +32,7 @@ export default function Temperature() {
 
           <article className="card wide">
             <header>Live Trend</header>
-            <SensorChart color="#ff6a3d" />
+            <SensorChart />
           </article>
         </div>
       </DashboardLayout>
