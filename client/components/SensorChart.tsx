@@ -45,7 +45,7 @@ export default function SensorChart({ points = 40, height = 140, color = "#000" 
 
   return (
     <div style={{ width: "100%", height, overflow: "hidden" }}>
-      <svg viewBox={`0 0 ${vbW} ${vbH}`} width="100%" height="100%" preserveAspectRatio="none" aria-hidden>
+      <svg viewBox={`0 0 ${vbW} ${vbH}`} width="100%" height="100%" preserveAspectRatio="none" aria-hidden style={{ display: "block" }}>
         <g stroke="#000" strokeWidth={1}>
           <line x1={x0} y1={y0} x2={x1} y2={y0} />
           <line x1={x0} y1={y0} x2={x0} y2={y1} />
