@@ -9,7 +9,26 @@ export default function Temperature() {
     <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid" style={{ position: "relative" }}>
-          <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ position: "absolute", top: 0, left: 0, zIndex: 1, width: 60, height: 60, fontSize: 28, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
+          <Link
+            to="/dashboard"
+            className="btn-outline"
+            aria-label="Back"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              width: 60,
+              height: 60,
+              fontSize: 28,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 0,
+            }}
+          >
+            &lt;
+          </Link>
 
           <article className="card metric">
             <header>Temperature</header>
