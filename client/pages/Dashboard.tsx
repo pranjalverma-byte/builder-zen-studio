@@ -28,29 +28,15 @@ export default function Dashboard() {
             <div className="trend" aria-hidden></div>
           </Link>
 
-          <Link to="/dashboard/sleep" className="card wide" style={{ textDecoration: "none", gridColumn: "span 2" }}>
-            <header>Sleep Schedule</header>
-            <div className="row">
-              <div>10:00 PM - 6:00 AM</div>
-            </div>
-            <div className="sleep-timeline" aria-hidden></div>
-            <div className="row">
-              <strong>8 Hours 30 Mins</strong>
-              <span className="moon" aria-hidden>
-                ���
-              </span>
-            </div>
-          </Link>
-
           <article
-            className="card"
-            style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "stretch", justifyContent: "center" }}
+            className="card wide"
+            style={{ gridColumn: "1 / -1", display: "flex", flexDirection: "column", gap: 16, alignItems: "center" }}
           >
             <header>ThingSpeak Feed</header>
             <iframe
               width="100%"
-              height="260"
-              style={{ border: "1px solid #cccccc", borderRadius: "12px", background: "#fff" }}
+              height="320"
+              style={{ border: "1px solid #cccccc", borderRadius: "12px", background: "#fff", maxWidth: "100%" }}
               src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
               title="ThingSpeak Live Data"
             />
@@ -62,6 +48,20 @@ export default function Dashboard() {
               View Details
             </Link>
           </article>
+
+          <Link to="/dashboard/sleep" className="card wide" style={{ textDecoration: "none" }}>
+            <header>Sleep Schedule</header>
+            <div className="row">
+              <div>10:00 PM - 6:00 AM</div>
+            </div>
+            <div className="sleep-timeline" aria-hidden></div>
+            <div className="row">
+              <strong>8 Hours 30 Mins</strong>
+              <span className="moon" aria-hidden>
+                🌙
+              </span>
+            </div>
+          </Link>
 
           <Link to="/dashboard/stress-anxiety" className="card wide" style={{ textDecoration: "none" }}>
             <header>Stress & Anxiety</header>
