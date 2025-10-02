@@ -37,19 +37,30 @@ export default function Dashboard() {
             <div className="row">
               <strong>8 Hours 30 Mins</strong>
               <span className="moon" aria-hidden>
-                🌙
+                ���
               </span>
             </div>
           </Link>
 
-          <article className="card" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+          <article
+            className="card"
+            style={{ display: "flex", flexDirection: "column", gap: 12, alignItems: "stretch", justifyContent: "center" }}
+          >
+            <header>ThingSpeak Feed</header>
             <iframe
-              width="450"
+              width="100%"
               height="260"
-              style={{ border: "1px solid #cccccc", width: "100%", borderRadius: "12px" }}
+              style={{ border: "1px solid #cccccc", borderRadius: "12px", background: "#fff" }}
               src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
-              title="Sensor Trend"
+              title="ThingSpeak Live Data"
             />
+            <Link
+              to="/dashboard/thingspeak"
+              className="btn-outline"
+              style={{ alignSelf: "flex-end", paddingInline: 20, fontWeight: 600 }}
+            >
+              View Details
+            </Link>
           </article>
 
           <Link to="/dashboard/stress-anxiety" className="card wide" style={{ textDecoration: "none" }}>
