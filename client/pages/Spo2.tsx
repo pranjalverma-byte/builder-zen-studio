@@ -8,7 +8,7 @@ export default function Spo2() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
-        <div className="dash-grid" style={{ position: "relative" }}>
+        <div className="dash-grid" style={{ position: "relative", paddingTop: 80 }}>
           <Link
             to="/dashboard"
             className="btn-outline"
