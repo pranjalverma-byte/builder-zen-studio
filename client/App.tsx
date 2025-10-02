@@ -19,6 +19,7 @@ import Accelerometer from "./pages/Accelerometer";
 import Temperature from "./pages/Temperature";
 import SleepSchedule from "./pages/SleepSchedule";
 import StressAnxiety from "./pages/StressAnxiety";
+import ThingSpeak from "./pages/ThingSpeak";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 import RouteProgress from "@/components/RouteProgress";
@@ -87,6 +88,14 @@ const AnimatedRoutes = () => {
           element={
             <ProtectedRoute>
               <StressAnxiety />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/dashboard/thingspeak"
+          element={
+            <ProtectedRoute>
+              <ThingSpeak />
             </ProtectedRoute>
           }
         />
