@@ -49,7 +49,7 @@ export default function Dashboard() {
             </Link>
           </article>
 
-          <Link to="/dashboard/sleep" className="card wide" style={{ textDecoration: "none" }}>
+          <Link to="/dashboard/sleep" className="card" style={{ textDecoration: "none", aspectRatio: "1 / 1", display: "flex", flexDirection: "column" }}>
             <header>Sleep Schedule</header>
             <div className="row">
               <div>10:00 PM - 6:00 AM</div>
@@ -63,7 +63,7 @@ export default function Dashboard() {
             </div>
           </Link>
 
-          <Link to="/dashboard/stress-anxiety" className="card wide" style={{ textDecoration: "none" }}>
+          <Link to="/dashboard/stress-anxiety" className="card" style={{ textDecoration: "none", aspectRatio: "1 / 1", display: "flex", flexDirection: "column" }}>
             <header>Stress & Anxiety</header>
             <div className="rings" aria-hidden></div>
             <div className="row">
