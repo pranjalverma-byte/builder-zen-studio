@@ -29,15 +29,18 @@ export default function ThingSpeak() {
             &lt;
           </Link>
 
-          <article className="card wide" style={{ gridColumn: "1 / -1", display: "flex", flexDirection: "column", gap: 16 }}>
+          <article
+            className="card wide"
+            style={{ gridColumn: "1 / -1", display: "flex", flexDirection: "column", gap: 16, alignItems: "center" }}
+          >
             <header>ThingSpeak Feed</header>
             <p className="muted">
               Real-time chart rendered directly from the ThingSpeak channel. Data updates automatically every few seconds.
             </p>
             <iframe
               width="100%"
-              height="360"
-              style={{ border: "1px solid #cccccc", borderRadius: 12, background: "#fff" }}
+              height="420"
+              style={{ border: "1px solid #cccccc", borderRadius: 12, background: "#fff", maxWidth: "100%" }}
               src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
               title="ThingSpeak Live Data"
             />
