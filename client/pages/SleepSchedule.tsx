@@ -8,8 +8,30 @@ export default function SleepSchedule() {
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
-        <div className="dash-grid" style={{ position: "relative", paddingTop: 80 }}>
-          <Link to="/dashboard" className="btn-outline" aria-label="Back" style={{ position: "absolute", top: 0, left: 0, zIndex: 1, width: 60, height: 60, fontSize: 28, display: "inline-flex", alignItems: "center", justifyContent: "center", padding: 0 }}>&lt;</Link>
+        <div
+          className="dash-grid"
+          style={{ position: "relative", paddingTop: 80 }}
+        >
+          <Link
+            to="/dashboard"
+            className="btn-outline"
+            aria-label="Back"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              zIndex: 1,
+              width: 60,
+              height: 60,
+              fontSize: 28,
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: 0,
+            }}
+          >
+            &lt;
+          </Link>
 
           <article className="card wide">
             <header>Sleep Schedule</header>
@@ -19,7 +41,9 @@ export default function SleepSchedule() {
             <SensorChart height={100} points={50} />
             <div className="row">
               <strong>8 Hours 30 Mins</strong>
-              <span className="moon" aria-hidden>🌙</span>
+              <span className="moon" aria-hidden>
+                🌙
+              </span>
             </div>
           </article>
 
