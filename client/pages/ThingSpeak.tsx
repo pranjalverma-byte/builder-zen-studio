@@ -29,7 +29,7 @@ export default function ThingSpeak() {
             &lt;
           </Link>
 
-          <article className="card wide" style={{ gridColumn: "span 3", display: "flex", flexDirection: "column", gap: 16 }}>
+          <article className="card wide" style={{ gridColumn: "1 / -1", display: "flex", flexDirection: "column", gap: 16 }}>
             <header>ThingSpeak Feed</header>
             <p className="muted">
               Real-time chart rendered directly from the ThingSpeak channel. Data updates automatically every few seconds.
