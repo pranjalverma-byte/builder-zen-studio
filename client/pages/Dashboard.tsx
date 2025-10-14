@@ -53,14 +53,14 @@ export default function Dashboard() {
             <header>ThingSpeak Feed</header>
             <iframe
               width="100%"
-              height="320"
+              height="260"
               style={{
                 border: "1px solid #cccccc",
                 borderRadius: "12px",
                 background: "#fff",
                 maxWidth: "100%",
               }}
-              src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+              src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
               title="ThingSpeak Live Data"
             />
             <Link
