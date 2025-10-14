@@ -2,6 +2,7 @@ import "../styles/style.css";
 import "../styles/style.css";
 import DashboardLayout from "@/components/DashboardLayout";
 import Page from "@/components/Page";
+import ZoomedIframe from "@/components/ZoomedIframe";
 import { Link } from "react-router-dom";
 
 export default function Dashboard() {
@@ -51,16 +52,10 @@ export default function Dashboard() {
             }}
           >
             <header>ThingSpeak Feed</header>
-            <iframe
-              width="100%"
-              height="260"
-              style={{
-                border: "1px solid #cccccc",
-                borderRadius: "12px",
-                background: "#fff",
-                maxWidth: "100%",
-              }}
+            <ZoomedIframe
               src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
+              baseWidth={450}
+              baseHeight={260}
               title="ThingSpeak Live Data"
             />
             <Link
