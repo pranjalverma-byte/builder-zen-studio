@@ -49,6 +49,7 @@ export default function Dashboard() {
               flexDirection: "column",
               gap: 16,
               alignItems: "center",
+              position: "relative",
             }}
           >
             <header>ThingSpeak Feed</header>
