@@ -63,9 +63,13 @@ export default function Dashboard() {
               to="/dashboard/thingspeak"
               className="btn-outline"
               style={{
-                alignSelf: "flex-end",
+                position: "absolute",
+                top: "50%",
+                right: 14,
+                transform: "translateY(-50%)",
                 paddingInline: 20,
                 fontWeight: 600,
+                zIndex: 2,
               }}
             >
               View Details
