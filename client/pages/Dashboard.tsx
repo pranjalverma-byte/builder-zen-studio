@@ -49,7 +49,6 @@ export default function Dashboard() {
               flexDirection: "column",
               gap: 16,
               alignItems: "center",
-              position: "relative",
             }}
           >
             <header>ThingSpeak Feed</header>
@@ -63,13 +62,13 @@ export default function Dashboard() {
               to="/dashboard/thingspeak"
               className="btn-outline"
               style={{
-                position: "absolute",
-                top: "50%",
-                right: 14,
-                transform: "translateY(-50%)",
+                alignSelf: "flex-end",
                 paddingInline: 20,
                 fontWeight: 600,
-                zIndex: 2,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
               }}
             >
               View Details
