@@ -44,8 +44,8 @@ export default function RealTimeClock() {
           >
             <header>Real Time Clock</header>
             <p className="muted">
-              Real-time clock data rendered directly from the ThingSpeak channel.
-              Data updates automatically every few seconds.
+              Real-time clock data rendered directly from the ThingSpeak
+              channel. Data updates automatically every few seconds.
             </p>
             <iframe
               width="100%"

@@ -147,7 +147,6 @@ export default function Dashboard() {
             </Link>
           </article>
 
-
           <Link
             to="/dashboard/stress-anxiety"
             className="card"
