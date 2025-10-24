@@ -51,25 +51,6 @@ export default function Dashboard() {
               alignItems: "center",
             }}
           >
-            <header>Temperature (Celsius)</header>
-            <ZoomedIframe
-              src="https://thingspeak.com/channels/3130559/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
-              title="Temperature Celsius Live Data"
-            />
-          </article>
-
-          <article
-            className="card wide"
-            style={{
-              gridColumn: "1 / -1",
-              display: "flex",
-              flexDirection: "column",
-              gap: 16,
-              alignItems: "center",
-            }}
-          >
             <header>ThingSpeak Feed</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
