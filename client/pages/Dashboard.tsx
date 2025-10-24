@@ -8,25 +8,46 @@ import { useState, useEffect } from "react";
 
 export default function Dashboard() {
   const [temperature, setTemperature] = useState<number | null>(null);
+  const [activityDone, setActivityDone] = useState<number | null>(null);
 
   useEffect(() => {
-    const fetchTemperature = async () => {
+    const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://api.thingspeak.com/channels/3130559/feeds/last.json",
+          "https://api.thingspeak.com/channels/3130559/feeds.json?results=8",
         );
         const data = await response.json();
-        if (data.field7) {
-          const celsiusTemp = parseFloat(data.field7);
-          setTemperature(celsiusTemp);
+
+        if (data.feeds && data.feeds.length > 0) {
+          const lastFeed = data.feeds[data.feeds.length - 1];
+
+          // Fetch temperature from field7
+          if (lastFeed.field7) {
+            const celsiusTemp = parseFloat(lastFeed.field7);
+            setTemperature(celsiusTemp);
+          }
+
+          // Calculate average activity done from field1 (acceleration magnitude or activity metric)
+          let activitySum = 0;
+          let activityCount = 0;
+          data.feeds.forEach((feed: any) => {
+            if (feed.field1) {
+              activitySum += parseFloat(feed.field1);
+              activityCount++;
+            }
+          });
+          if (activityCount > 0) {
+            const avgActivity = Math.round(activitySum / activityCount);
+            setActivityDone(avgActivity);
+          }
         }
       } catch (error) {
-        console.error("Failed to fetch temperature:", error);
+        console.error("Failed to fetch data:", error);
       }
     };
 
-    fetchTemperature();
-    const interval = setInterval(fetchTemperature, 30000);
+    fetchData();
+    const interval = setInterval(fetchData, 30000);
     return () => clearInterval(interval);
   }, []);
 
@@ -137,8 +158,8 @@ export default function Dashboard() {
             <header>Activity</header>
             <div className="rings" aria-hidden></div>
             <div className="row">
-              <strong>LOW</strong>
-              <span>Mindfulness Score: 75</span>
+              <strong>{activityDone ? "ACTIVE" : "LOW"}</strong>
+              <span>Activity Done: {activityDone ?? "--"}</span>
             </div>
           </Link>
         </div>
