@@ -130,6 +130,7 @@ export default function Dashboard() {
               flexDirection: "column",
               gap: 16,
               alignItems: "center",
+              position: "relative",
             }}
           >
             <header>Real Time Clock</header>
@@ -139,6 +140,21 @@ export default function Dashboard() {
               baseHeight={260}
               title="Real Time Clock"
             />
+            <Link
+              to="/dashboard/realtime-clock"
+              className="btn-outline"
+              style={{
+                alignSelf: "flex-end",
+                paddingInline: 20,
+                fontWeight: 600,
+                display: "inline-flex",
+                alignItems: "center",
+                justifyContent: "center",
+                textAlign: "center",
+              }}
+            >
+              View Details
+            </Link>
           </article>
 
           <Link
