@@ -46,17 +46,23 @@ export default function Accelerometer() {
 
           <article className="card">
             <header>Activity Breakdown</header>
-            <div className="row" style={{ marginTop: 10 }}>
-              <span>Walking</span>
-              <strong>5,120 steps</strong>
-            </div>
-            <div className="row">
-              <span>Running</span>
-              <strong>1,340 steps</strong>
-            </div>
-            <div className="row">
-              <span>Other</span>
-              <strong>1,430 steps</strong>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 10 }}>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div className="row" style={{ margin: 0 }}>
+                  <span>Walking</span>
+                  <strong>5,120 steps</strong>
+                </div>
+                <div className="row" style={{ margin: 0 }}>
+                  <span>Running</span>
+                  <strong>1,340 steps</strong>
+                </div>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                <div className="row" style={{ margin: 0 }}>
+                  <span>Other</span>
+                  <strong>1,430 steps</strong>
+                </div>
+              </div>
             </div>
           </article>
 
@@ -64,8 +70,8 @@ export default function Accelerometer() {
             <header>Motion in X</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={320}
-              baseHeight={240}
+              baseWidth={280}
+              baseHeight={200}
               title="Accelerometer X Motion"
             />
           </article>
@@ -74,8 +80,8 @@ export default function Accelerometer() {
             <header>Motion in Y</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={320}
-              baseHeight={240}
+              baseWidth={280}
+              baseHeight={200}
               title="Accelerometer Y Motion"
             />
           </article>
@@ -84,8 +90,8 @@ export default function Accelerometer() {
             <header>Motion in Z</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={320}
-              baseHeight={240}
+              baseWidth={280}
+              baseHeight={200}
               title="Accelerometer Z Motion"
             />
           </article>
