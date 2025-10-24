@@ -2,7 +2,7 @@ import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import Page from "@/components/Page";
 import { Link } from "react-router-dom";
-import SensorChart from "@/components/SensorChart";
+import ZoomedIframe from "@/components/ZoomedIframe";
 
 export default function Accelerometer() {
   return (
@@ -37,7 +37,6 @@ export default function Accelerometer() {
             <header>Accelerometer</header>
             <div className="icon-run" aria-hidden></div>
             <div className="sub">Steps: 7,890</div>
-            <SensorChart height={80} points={40} />
           </article>
 
           <article className="card wide">
@@ -57,8 +56,33 @@ export default function Accelerometer() {
           </article>
 
           <article className="card wide">
-            <header>Live Trend</header>
-            <SensorChart />
+            <header>Motion in X</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130559/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Accelerometer X Motion"
+            />
+          </article>
+
+          <article className="card wide">
+            <header>Motion in Y</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130559/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Accelerometer Y Motion"
+            />
+          </article>
+
+          <article className="card wide">
+            <header>Motion in Z</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130559/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Accelerometer Z Motion"
+            />
           </article>
         </div>
       </DashboardLayout>
