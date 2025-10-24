@@ -14,7 +14,7 @@ export default function Accelerometer() {
             position: "relative",
             paddingTop: 80,
             gridTemplateColumns: "repeat(2, 1fr)",
-            gridAutoRows: "minmax(280px, 280px)",
+            gridAutoRows: "minmax(420px, 420px)",
           }}
         >
           <Link
@@ -58,8 +58,8 @@ export default function Accelerometer() {
             <header>Motion in X</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={300}
-              baseHeight={200}
+              baseWidth={400}
+              baseHeight={300}
               title="Accelerometer X Motion"
             />
           </article>
@@ -68,8 +68,8 @@ export default function Accelerometer() {
             <header>Motion in Y</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={300}
-              baseHeight={200}
+              baseWidth={400}
+              baseHeight={300}
               title="Accelerometer Y Motion"
             />
           </article>
@@ -78,8 +78,8 @@ export default function Accelerometer() {
             <header>Motion in Z</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={300}
-              baseHeight={200}
+              baseWidth={400}
+              baseHeight={300}
               title="Accelerometer Z Motion"
             />
           </article>
