@@ -14,7 +14,8 @@ export default function Accelerometer() {
             position: "relative",
             paddingTop: 80,
             gridTemplateColumns: "repeat(2, 1fr)",
-            gridAutoRows: "minmax(420px, 420px)",
+            gridAutoRows: "minmax(420px, auto)",
+            overflow: "hidden",
           }}
         >
           <Link
@@ -39,8 +40,13 @@ export default function Accelerometer() {
           </Link>
 
           <article className="card">
+            <header>Total Steps</header>
+            <div className="big" style={{ marginTop: 20 }}>7,890</div>
+          </article>
+
+          <article className="card">
             <header>Activity Breakdown</header>
-            <div className="row">
+            <div className="row" style={{ marginTop: 10 }}>
               <span>Walking</span>
               <strong>5,120 steps</strong>
             </div>
