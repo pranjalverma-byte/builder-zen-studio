@@ -2,7 +2,7 @@ import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import Page from "@/components/Page";
 import { Link } from "react-router-dom";
-import SensorChart from "@/components/SensorChart";
+import ZoomedIframe from "@/components/ZoomedIframe";
 
 export default function StressAnxiety() {
   return (
@@ -34,15 +34,6 @@ export default function StressAnxiety() {
           </Link>
 
           <article className="card wide">
-            <header>Stress & Anxiety</header>
-            <SensorChart height={100} points={50} />
-            <div className="row">
-              <strong>LOW</strong>
-              <span>Mindfulness Score: 75</span>
-            </div>
-          </article>
-
-          <article className="card">
             <header>Mindfulness</header>
             <div className="row">
               <span className="sub">Today</span>
@@ -55,8 +46,33 @@ export default function StressAnxiety() {
           </article>
 
           <article className="card wide">
-            <header>Live Trend</header>
-            <SensorChart />
+            <header>Gyroscope Motion in X</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130559/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Gyroscope X Motion"
+            />
+          </article>
+
+          <article className="card wide">
+            <header>Gyroscope Motion in Y</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130559/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Gyroscope Y Motion"
+            />
+          </article>
+
+          <article className="card wide">
+            <header>Gyroscope Motion in Z</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130559/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Gyroscope Z Motion"
+            />
           </article>
         </div>
       </DashboardLayout>
