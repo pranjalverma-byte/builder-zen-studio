@@ -38,13 +38,7 @@ export default function Accelerometer() {
             &lt;
           </Link>
 
-          <article className="card metric">
-            <header>Accelerometer</header>
-            <div className="icon-run" aria-hidden></div>
-            <div className="sub">Steps: 7,890</div>
-          </article>
-
-          <article className="card wide">
+          <article className="card">
             <header>Activity Breakdown</header>
             <div className="row">
               <span>Walking</span>
