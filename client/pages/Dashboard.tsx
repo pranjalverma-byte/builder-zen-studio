@@ -122,40 +122,23 @@ export default function Dashboard() {
             </Link>
           </article>
 
-          <article
-            className="card wide"
+          <Link
+            to="/dashboard/realtime-clock"
+            className="card"
             style={{
-              gridColumn: "1 / -1",
+              textDecoration: "none",
+              aspectRatio: "1 / 1",
               display: "flex",
               flexDirection: "column",
-              gap: 16,
-              alignItems: "center",
-              position: "relative",
             }}
           >
             <header>Real Time Clock</header>
-            <ZoomedIframe
-              src="https://thingspeak.com/channels/3130762/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
-              baseWidth={450}
-              baseHeight={260}
-              title="Real Time Clock"
-            />
-            <Link
-              to="/dashboard/realtime-clock"
-              className="btn-outline"
-              style={{
-                alignSelf: "flex-end",
-                paddingInline: 20,
-                fontWeight: 600,
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-              }}
-            >
-              View Details
-            </Link>
-          </article>
+            <div className="rings" aria-hidden></div>
+            <div className="row">
+              <strong>LIVE</strong>
+              <span>View Data</span>
+            </div>
+          </Link>
 
           <Link
             to="/dashboard/stress-anxiety"
