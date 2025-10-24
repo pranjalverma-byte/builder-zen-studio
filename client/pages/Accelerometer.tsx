@@ -54,32 +54,32 @@ export default function Accelerometer() {
             </div>
           </article>
 
-          <article className="card wide">
+          <article className="card">
             <header>Motion in X</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
+              baseWidth={300}
+              baseHeight={200}
               title="Accelerometer X Motion"
             />
           </article>
 
-          <article className="card wide">
+          <article className="card">
             <header>Motion in Y</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
+              baseWidth={300}
+              baseHeight={200}
               title="Accelerometer Y Motion"
             />
           </article>
 
-          <article className="card wide">
+          <article className="card">
             <header>Motion in Z</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
+              baseWidth={300}
+              baseHeight={200}
               title="Accelerometer Z Motion"
             />
           </article>
