@@ -20,6 +20,7 @@ import Temperature from "./pages/Temperature";
 import SleepSchedule from "./pages/SleepSchedule";
 import StressAnxiety from "./pages/StressAnxiety";
 import ThingSpeak from "./pages/ThingSpeak";
+import RealTimeClock from "./pages/RealTimeClock";
 import ProtectedRoute from "@/components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 import RouteProgress from "@/components/RouteProgress";
