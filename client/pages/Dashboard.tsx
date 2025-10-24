@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 export default function Dashboard() {
   const [temperature, setTemperature] = useState<number | null>(null);
   const [activityDone, setActivityDone] = useState<number | null>(null);
+  const [currentTime, setCurrentTime] = useState<string>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -51,17 +52,31 @@ export default function Dashboard() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const updateTime = () => {
+      const now = new Date();
+      const hours = now.getHours() % 12 || 12;
+      const minutes = String(now.getMinutes()).padStart(2, "0");
+      const seconds = String(now.getSeconds()).padStart(2, "0");
+      const ampm = now.getHours() >= 12 ? "PM" : "AM";
+      setCurrentTime(`${hours}:${minutes}:${seconds} ${ampm}`);
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
         <div className="dash-grid">
           <Link
-            to="/dashboard/spo2"
+            to="/dashboard/realtime-clock"
             className="card metric"
             style={{ textDecoration: "none" }}
           >
-            <header>SpO₂</header>
-            <div className="big">98%</div>
+            <header>Real Time Clock</header>
+            <div className="big">{currentTime || "--:--:-- --"}</div>
             <div className="mini-graph" aria-hidden></div>
           </Link>
 
@@ -86,6 +101,16 @@ export default function Dashboard() {
               {temperature !== null ? `${temperature.toFixed(1)}°C` : "--°C"}
             </div>
             <div className="trend" aria-hidden></div>
+          </Link>
+
+          <Link
+            to="/dashboard/spo2"
+            className="card metric"
+            style={{ textDecoration: "none" }}
+          >
+            <header>SpO₂</header>
+            <div className="big">98%</div>
+            <div className="mini-graph" aria-hidden></div>
           </Link>
 
           <article
@@ -122,23 +147,6 @@ export default function Dashboard() {
             </Link>
           </article>
 
-          <Link
-            to="/dashboard/realtime-clock"
-            className="card"
-            style={{
-              textDecoration: "none",
-              aspectRatio: "1 / 1",
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <header>Real Time Clock</header>
-            <div className="rings" aria-hidden></div>
-            <div className="row">
-              <strong>LIVE</strong>
-              <span>View Data</span>
-            </div>
-          </Link>
 
           <Link
             to="/dashboard/stress-anxiety"
