@@ -101,6 +101,14 @@ const AnimatedRoutes = () => {
           }
         />
         <Route
+          path="/dashboard/realtime-clock"
+          element={
+            <ProtectedRoute>
+              <RealTimeClock />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/dashboard/connectivity"
           element={
             <ProtectedRoute>
