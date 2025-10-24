@@ -4,8 +4,32 @@ import DashboardLayout from "@/components/DashboardLayout";
 import Page from "@/components/Page";
 import ZoomedIframe from "@/components/ZoomedIframe";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Dashboard() {
+  const [temperature, setTemperature] = useState<number | null>(null);
+
+  useEffect(() => {
+    const fetchTemperature = async () => {
+      try {
+        const response = await fetch(
+          "https://api.thingspeak.com/channels/3130559/feeds/last.json"
+        );
+        const data = await response.json();
+        if (data.field7) {
+          const celsiusTemp = parseFloat(data.field7);
+          setTemperature(celsiusTemp);
+        }
+      } catch (error) {
+        console.error("Failed to fetch temperature:", error);
+      }
+    };
+
+    fetchTemperature();
+    const interval = setInterval(fetchTemperature, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Page className="dashboard-bg">
       <DashboardLayout>
@@ -37,7 +61,9 @@ export default function Dashboard() {
             style={{ textDecoration: "none" }}
           >
             <header>Temperature</header>
-            <div className="big">98.6°F</div>
+            <div className="big">
+              {temperature !== null ? `${temperature.toFixed(1)}°C` : "--°C"}
+            </div>
             <div className="trend" aria-hidden></div>
           </Link>
 
