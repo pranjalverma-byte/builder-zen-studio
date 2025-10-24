@@ -2,7 +2,7 @@ import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import Page from "@/components/Page";
 import { Link } from "react-router-dom";
-import SensorChart from "@/components/SensorChart";
+import ZoomedIframe from "@/components/ZoomedIframe";
 
 export default function Temperature() {
   return (
@@ -33,28 +33,14 @@ export default function Temperature() {
             &lt;
           </Link>
 
-          <article className="card metric">
-            <header>Temperature</header>
-            <div className="big">98.6°F</div>
-            <SensorChart height={80} points={40} />
-          </article>
-
           <article className="card wide">
-            <header>24h Trend</header>
-            <SensorChart height={120} points={50} />
-            <div className="row">
-              <span className="sub">High</span>
-              <strong>99.2°F</strong>
-            </div>
-            <div className="row">
-              <span className="sub">Low</span>
-              <strong>97.9°F</strong>
-            </div>
-          </article>
-
-          <article className="card wide">
-            <header>Live Trend</header>
-            <SensorChart />
+            <header>Temperature (Celsius)</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130559/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Temperature Celsius Live Data"
+            />
           </article>
         </div>
       </DashboardLayout>
