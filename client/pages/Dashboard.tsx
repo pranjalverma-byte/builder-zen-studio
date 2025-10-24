@@ -13,7 +13,7 @@ export default function Dashboard() {
     const fetchTemperature = async () => {
       try {
         const response = await fetch(
-          "https://api.thingspeak.com/channels/3130559/feeds/last.json"
+          "https://api.thingspeak.com/channels/3130559/feeds/last.json",
         );
         const data = await response.json();
         if (data.field7) {
