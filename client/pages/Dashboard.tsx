@@ -134,7 +134,7 @@ export default function Dashboard() {
               flexDirection: "column",
             }}
           >
-            <header>Stress & Anxiety</header>
+            <header>Activity</header>
             <div className="rings" aria-hidden></div>
             <div className="row">
               <strong>LOW</strong>
