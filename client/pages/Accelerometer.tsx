@@ -10,13 +10,7 @@ export default function Accelerometer() {
       <DashboardLayout>
         <div
           className="dash-grid"
-          style={{
-            position: "relative",
-            paddingTop: 80,
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gridAutoRows: "minmax(420px, auto)",
-            overflow: "hidden",
-          }}
+          style={{ position: "relative", paddingTop: 80 }}
         >
           <Link
             to="/dashboard"
@@ -39,59 +33,48 @@ export default function Accelerometer() {
             &lt;
           </Link>
 
-          <article className="card">
-            <header>Total Steps</header>
-            <div className="big" style={{ marginTop: 20 }}>7,890</div>
-          </article>
-
-          <article className="card">
+          <article className="card wide">
             <header>Activity Breakdown</header>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 10 }}>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                <div className="row" style={{ margin: 0 }}>
-                  <span>Walking</span>
-                  <strong>5,120 steps</strong>
-                </div>
-                <div className="row" style={{ margin: 0 }}>
-                  <span>Running</span>
-                  <strong>1,340 steps</strong>
-                </div>
-              </div>
-              <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-                <div className="row" style={{ margin: 0 }}>
-                  <span>Other</span>
-                  <strong>1,430 steps</strong>
-                </div>
-              </div>
+            <div className="row">
+              <span>Walking</span>
+              <strong>5,120 steps</strong>
+            </div>
+            <div className="row">
+              <span>Running</span>
+              <strong>1,340 steps</strong>
+            </div>
+            <div className="row">
+              <span>Other</span>
+              <strong>1,430 steps</strong>
             </div>
           </article>
 
-          <article className="card">
+          <article className="card wide">
             <header>Motion in X</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={280}
-              baseHeight={200}
+              baseWidth={450}
+              baseHeight={260}
               title="Accelerometer X Motion"
             />
           </article>
 
-          <article className="card">
+          <article className="card wide">
             <header>Motion in Y</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={280}
-              baseHeight={200}
+              baseWidth={450}
+              baseHeight={260}
               title="Accelerometer Y Motion"
             />
           </article>
 
-          <article className="card">
+          <article className="card wide">
             <header>Motion in Z</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={280}
-              baseHeight={200}
+              baseWidth={450}
+              baseHeight={260}
               title="Accelerometer Z Motion"
             />
           </article>
