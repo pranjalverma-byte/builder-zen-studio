@@ -122,28 +122,24 @@ export default function Dashboard() {
             </Link>
           </article>
 
-          <Link
-            to="/dashboard/sleep"
-            className="card"
+          <article
+            className="card wide"
             style={{
-              textDecoration: "none",
-              aspectRatio: "1 / 1",
+              gridColumn: "1 / -1",
               display: "flex",
               flexDirection: "column",
+              gap: 16,
+              alignItems: "center",
             }}
           >
-            <header>Sleep Schedule</header>
-            <div className="row">
-              <div>10:00 PM - 6:00 AM</div>
-            </div>
-            <div className="sleep-timeline" aria-hidden></div>
-            <div className="row">
-              <strong>8 Hours 30 Mins</strong>
-              <span className="moon" aria-hidden>
-                🌙
-              </span>
-            </div>
-          </Link>
+            <header>Real Time Clock</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130762/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Real Time Clock"
+            />
+          </article>
 
           <Link
             to="/dashboard/stress-anxiety"
