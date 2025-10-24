@@ -84,8 +84,8 @@ export default function Accelerometer() {
             <header>Motion in Z</header>
             <ZoomedIframe
               src="https://thingspeak.com/channels/3130559/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={400}
-              baseHeight={300}
+              baseWidth={320}
+              baseHeight={240}
               title="Accelerometer Z Motion"
             />
           </article>
