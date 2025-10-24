@@ -10,7 +10,12 @@ export default function Accelerometer() {
       <DashboardLayout>
         <div
           className="dash-grid"
-          style={{ position: "relative", paddingTop: 80 }}
+          style={{
+            position: "relative",
+            paddingTop: 80,
+            gridTemplateColumns: "repeat(2, 1fr)",
+            gridAutoRows: "minmax(280px, 280px)",
+          }}
         >
           <Link
             to="/dashboard"
