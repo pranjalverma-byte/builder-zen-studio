@@ -113,40 +113,6 @@ export default function Dashboard() {
             <div className="mini-graph" aria-hidden></div>
           </Link>
 
-          <article
-            className="card wide"
-            style={{
-              gridColumn: "1 / -1",
-              display: "flex",
-              flexDirection: "column",
-              gap: 16,
-              alignItems: "center",
-            }}
-          >
-            <header>ThingSpeak Feed</header>
-            <ZoomedIframe
-              src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
-              baseWidth={450}
-              baseHeight={260}
-              title="ThingSpeak Live Data"
-            />
-            <Link
-              to="/dashboard/thingspeak"
-              className="btn-outline"
-              style={{
-                alignSelf: "flex-end",
-                paddingInline: 20,
-                fontWeight: 600,
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center",
-              }}
-            >
-              View Details
-            </Link>
-          </article>
-
           <Link
             to="/dashboard/stress-anxiety"
             className="card"
