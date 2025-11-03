@@ -94,6 +94,14 @@ const AnimatedRoutes = () => {
           }
         />
         <Route
+          path="/dashboard/activity"
+          element={
+            <ProtectedRoute>
+              <Activity />
+            </ProtectedRoute>
+          }
+        />
+        <Route
           path="/dashboard/thingspeak"
           element={
             <ProtectedRoute>
