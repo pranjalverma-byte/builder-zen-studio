@@ -3,6 +3,7 @@ import "../styles/style.css";
 import Page from "@/components/Page";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import ZoomedIframe from "@/components/ZoomedIframe";
 
 export default function Activity() {
   const [activityDone, setActivityDone] = useState<number | null>(null);
