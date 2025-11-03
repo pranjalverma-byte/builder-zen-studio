@@ -34,6 +34,16 @@ export default function StressAnxiety() {
           </Link>
 
           <article className="card wide">
+            <header>Stress and Anxiety</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Stress and Anxiety"
+            />
+          </article>
+
+          <article className="card wide">
             <header>Mindfulness</header>
             <div className="row">
               <span className="sub">Today</span>
