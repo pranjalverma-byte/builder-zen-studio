@@ -19,6 +19,7 @@ import Accelerometer from "./pages/Accelerometer";
 import Temperature from "./pages/Temperature";
 import SleepSchedule from "./pages/SleepSchedule";
 import StressAnxiety from "./pages/StressAnxiety";
+import Activity from "./pages/Activity";
 import ThingSpeak from "./pages/ThingSpeak";
 import RealTimeClock from "./pages/RealTimeClock";
 import ProtectedRoute from "@/components/ProtectedRoute";
