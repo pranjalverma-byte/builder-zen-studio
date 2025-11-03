@@ -42,6 +42,26 @@ export default function Temperature() {
               title="Temperature Celsius Live Data"
             />
           </article>
+
+          <article className="card wide">
+            <header>Object Temp</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130837/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Object Temp Live Data"
+            />
+          </article>
+
+          <article className="card wide">
+            <header>Ambient Temp</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3130837/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Ambient Temp Live Data"
+            />
+          </article>
         </div>
       </DashboardLayout>
     </Page>
