@@ -2,7 +2,6 @@ import "../styles/style.css";
 import "../styles/style.css";
 import DashboardLayout from "@/components/DashboardLayout";
 import Page from "@/components/Page";
-import ZoomedIframe from "@/components/ZoomedIframe";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
