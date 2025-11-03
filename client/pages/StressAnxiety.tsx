@@ -54,36 +54,6 @@ export default function StressAnxiety() {
               <strong>4 days</strong>
             </div>
           </article>
-
-          <article className="card wide">
-            <header>Gyroscope Motion in X</header>
-            <ZoomedIframe
-              src="https://thingspeak.com/channels/3130559/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
-              title="Gyroscope X Motion"
-            />
-          </article>
-
-          <article className="card wide">
-            <header>Gyroscope Motion in Y</header>
-            <ZoomedIframe
-              src="https://thingspeak.com/channels/3130559/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
-              title="Gyroscope Y Motion"
-            />
-          </article>
-
-          <article className="card wide">
-            <header>Gyroscope Motion in Z</header>
-            <ZoomedIframe
-              src="https://thingspeak.com/channels/3130559/charts/6?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
-              title="Gyroscope Z Motion"
-            />
-          </article>
         </div>
       </DashboardLayout>
     </Page>
