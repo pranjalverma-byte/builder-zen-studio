@@ -113,7 +113,7 @@ export default function Dashboard() {
           </Link>
 
           <Link
-            to="/dashboard/stress-anxiety"
+            to="/dashboard/activity"
             className="card"
             style={{
               textDecoration: "none",
@@ -127,6 +127,23 @@ export default function Dashboard() {
             <div className="row">
               <strong>{activityDone ? "ACTIVE" : "LOW"}</strong>
               <span>Activity Done: {activityDone ?? "--"}</span>
+            </div>
+          </Link>
+
+          <Link
+            to="/dashboard/stress-anxiety"
+            className="card"
+            style={{
+              textDecoration: "none",
+              aspectRatio: "1 / 1",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <header>Stress and Anxiety</header>
+            <div className="rings" aria-hidden></div>
+            <div className="row">
+              <span>View stress and anxiety metrics</span>
             </div>
           </Link>
         </div>
