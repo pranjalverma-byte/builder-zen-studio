@@ -445,6 +445,15 @@
     0 8px 22px rgba(0, 0, 0, 0.12),
     0 0 10px rgba(255, 255, 255, 0.6),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .btn-outline {
+    height: 40px;
+    font-size: 12px;
+    min-width: 40px;
+  }
 }
 .file-hidden {
   position: absolute;
