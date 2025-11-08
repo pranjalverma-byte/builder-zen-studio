@@ -36,23 +36,11 @@ export default function StressAnxiety() {
           <article className="card wide">
             <header>Stress and Anxiety</header>
             <ZoomedIframe
-              src="https://thingspeak.com/channels/3097808/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=7&type=line"
+              src="https://thingspeak.com/channels/3145110/charts/5?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
               baseWidth={450}
               baseHeight={260}
               title="Stress and Anxiety"
             />
-          </article>
-
-          <article className="card wide">
-            <header>Mindfulness</header>
-            <div className="row">
-              <span className="sub">Today</span>
-              <strong>12 min</strong>
-            </div>
-            <div className="row">
-              <span className="sub">Streak</span>
-              <strong>4 days</strong>
-            </div>
           </article>
         </div>
       </DashboardLayout>
