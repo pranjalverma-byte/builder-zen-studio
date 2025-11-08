@@ -34,6 +34,16 @@ export default function Accelerometer() {
           </Link>
 
           <article className="card wide">
+            <header>Accelerometer Data</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3145110/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=10&type=line"
+              baseWidth={450}
+              baseHeight={260}
+              title="Accelerometer Data"
+            />
+          </article>
+
+          <article className="card wide">
             <header>Activity Breakdown</header>
             <div className="row">
               <span>Walking</span>
