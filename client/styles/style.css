@@ -596,6 +596,19 @@
   position: relative;
 }
 
+@media (max-width: 1024px) {
+  .dash-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
 .sensor-back-button {
   position: absolute;
   top: 0;
