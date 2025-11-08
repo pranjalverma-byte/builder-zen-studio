@@ -29,15 +29,26 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   return (
     <section className="dash-frame">
       <aside className="dash-sidebar">
-        <div className="dash-user">
-          {avatar ? (
-            <img src={avatar} alt="Profile" className="avatar-img" />
-          ) : (
-            <div className="avatar-default" style={{ background: colorFromName(user), color: '#fff' }} aria-hidden>{initial}</div>
-          )}
-          <div className="user-name">{user}</div>
+        <div className="dash-user-section">
+          <div className="dash-user">
+            {avatar ? (
+              <img src={avatar} alt="Profile" className="avatar-img" />
+            ) : (
+              <div className="avatar-default" style={{ background: colorFromName(user), color: '#fff' }} aria-hidden>{initial}</div>
+            )}
+            <div className="user-name">{user}</div>
+          </div>
+          <button
+            className="hamburger-btn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
-        <nav className="dash-nav">
+        <nav className={`dash-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
           <NavLink to="/dashboard" end className={({isActive})=>isActive?"dash-link active":"dash-link"}>Dashboard</NavLink>
           <NavLink to="/dashboard/settings" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Settings</NavLink>
           <NavLink to="/dashboard/connectivity" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Connectivity</NavLink>
