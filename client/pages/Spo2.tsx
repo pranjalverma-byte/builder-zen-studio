@@ -33,24 +33,14 @@ export default function Spo2() {
             &lt;
           </Link>
 
-          <article className="card metric">
-            <header>SpO₂</header>
-            <div className="big">98%</div>
-            <SensorChart height={80} points={40} />
-          </article>
-
           <article className="card wide">
-            <header>Recent Readings</header>
-            <SensorChart height={120} points={50} />
-            <div className="row">
-              <span className="sub">Average</span>
-              <strong>97% (24h)</strong>
-            </div>
-          </article>
-
-          <article className="card wide">
-            <header>Live Trend</header>
-            <SensorChart />
+            <header>Heart Rate Monitoring</header>
+            <ZoomedIframe
+              src="https://thingspeak.com/channels/3145110/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
+              baseWidth={450}
+              baseHeight={260}
+              title="Heart Rate Monitoring"
+            />
           </article>
         </div>
       </DashboardLayout>
