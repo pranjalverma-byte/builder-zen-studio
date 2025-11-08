@@ -267,6 +267,11 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+@media (max-width: 400px) {
+  .home-buttons {
+    gap: 12px;
+  }
+}
 .btn-option {
   display: inline-flex;
   align-items: center;
