@@ -6,12 +6,16 @@ import "../styles/style.css";
 export default function DashboardLayout({ children }: { children: ReactNode }) {
   const user = getUser() ?? "User";
   const navigate = useNavigate();
-  const onLogout = () => { logout(); navigate("/login"); };
+  const onLogout = () => {
+    logout();
+    navigate("/login");
+  };
 
   const initial = (user?.trim?.()[0] || "U").toUpperCase();
   const colorFromName = (name: string) => {
     let h = 0;
-    for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) % 360;
+    for (let i = 0; i < name.length; i++)
+      h = (h * 31 + name.charCodeAt(i)) % 360;
     return `hsl(${h} 60% 50%)`;
   };
 
@@ -23,7 +27,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
     load();
     const handler = () => load();
     window.addEventListener("avatar:updated" as any, handler as any);
-    return () => window.removeEventListener("avatar:updated" as any, handler as any);
+    return () =>
+      window.removeEventListener("avatar:updated" as any, handler as any);
   }, []);
 
   return (
@@ -34,7 +39,13 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             {avatar ? (
               <img src={avatar} alt="Profile" className="avatar-img" />
             ) : (
-              <div className="avatar-default" style={{ background: colorFromName(user), color: '#fff' }} aria-hidden>{initial}</div>
+              <div
+                className="avatar-default"
+                style={{ background: colorFromName(user), color: "#fff" }}
+                aria-hidden
+              >
+                {initial}
+              </div>
             )}
             <div className="user-name">{user}</div>
           </div>
@@ -48,13 +59,51 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
             <span></span>
           </button>
         </div>
-        <nav className={`dash-nav ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <NavLink to="/dashboard" end className={({isActive})=>isActive?"dash-link active":"dash-link"}>Dashboard</NavLink>
-          <NavLink to="/dashboard/settings" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Settings</NavLink>
-          <NavLink to="/dashboard/connectivity" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Connectivity</NavLink>
-          <NavLink to="/dashboard/support" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Support</NavLink>
-          <NavLink to="/dashboard/emergency-contacts" className={({isActive})=>isActive?"dash-link active":"dash-link"}>Emergency Contacts</NavLink>
-          <button onClick={onLogout} className="btn-logout">Logout</button>
+        <nav className={`dash-nav ${mobileMenuOpen ? "mobile-open" : ""}`}>
+          <NavLink
+            to="/dashboard"
+            end
+            className={({ isActive }) =>
+              isActive ? "dash-link active" : "dash-link"
+            }
+          >
+            Dashboard
+          </NavLink>
+          <NavLink
+            to="/dashboard/settings"
+            className={({ isActive }) =>
+              isActive ? "dash-link active" : "dash-link"
+            }
+          >
+            Settings
+          </NavLink>
+          <NavLink
+            to="/dashboard/connectivity"
+            className={({ isActive }) =>
+              isActive ? "dash-link active" : "dash-link"
+            }
+          >
+            Connectivity
+          </NavLink>
+          <NavLink
+            to="/dashboard/support"
+            className={({ isActive }) =>
+              isActive ? "dash-link active" : "dash-link"
+            }
+          >
+            Support
+          </NavLink>
+          <NavLink
+            to="/dashboard/emergency-contacts"
+            className={({ isActive }) =>
+              isActive ? "dash-link active" : "dash-link"
+            }
+          >
+            Emergency Contacts
+          </NavLink>
+          <button onClick={onLogout} className="btn-logout">
+            Logout
+          </button>
         </nav>
       </aside>
       {children}
