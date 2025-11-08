@@ -475,6 +475,17 @@
 .user-name {
   font-weight: 600;
   color: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .user-name {
+    font-size: 13px;
+  }
 }
 .dash-nav {
   display: grid;
