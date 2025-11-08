@@ -362,6 +362,13 @@
   border-radius: 12px;
   padding: 10px;
 }
+
+@media (max-width: 768px) {
+  .dash-user {
+    gap: 10px;
+    padding: 8px;
+  }
+}
 .dash-user .avatar {
   width: 36px;
   height: 36px;
