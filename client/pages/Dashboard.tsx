@@ -108,7 +108,7 @@ export default function Dashboard() {
             style={{ textDecoration: "none" }}
           >
             <header>Heart Rate Monitoring</header>
-            <div className="big">98%</div>
+            <div className="heart-pump">❤️</div>
             <div className="mini-graph" aria-hidden></div>
           </Link>
 
