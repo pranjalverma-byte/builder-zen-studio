@@ -13,7 +13,7 @@ export default function Activity() {
       try {
         const response = await fetch(
           "https://api.thingspeak.com/channels/3130559/feeds.json?results=8",
-          { mode: "cors" }
+          { mode: "cors" },
         );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -35,7 +35,10 @@ export default function Activity() {
           }
         }
       } catch (error) {
-        console.warn("Activity data unavailable:", error instanceof Error ? error.message : "Unknown error");
+        console.warn(
+          "Activity data unavailable:",
+          error instanceof Error ? error.message : "Unknown error",
+        );
         setActivityDone(0);
       }
     };
