@@ -388,12 +388,63 @@
   gap: 14px;
 }
 
+.dash-user-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  gap: 5px;
+}
+
+.hamburger-btn span {
+  display: block;
+  width: 24px;
+  height: 2.5px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
 @media (max-width: 768px) {
   .dash-sidebar {
-    flex-direction: row;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px;
+    gap: 0;
+  }
+
+  .dash-user-section {
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .hamburger-btn {
+    display: flex;
+  }
+
+  .dash-nav {
+    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .dash-nav.mobile-open {
+    display: grid;
+    max-height: 500px;
   }
 }
 .dash-user {
