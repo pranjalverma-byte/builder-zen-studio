@@ -542,6 +542,16 @@
   display: grid;
   place-items: center;
   font-weight: 800;
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .avatar-default {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
 }
 .avatar-default-lg {
   width: 96px;
