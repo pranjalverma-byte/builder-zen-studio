@@ -727,3 +727,33 @@
   color: hsl(var(--brand-green-1));
   text-decoration: underline;
 }
+
+/* Heart pumping animation */
+.heart-pump {
+  width: 48px;
+  height: 48px;
+  margin: 8px auto;
+  font-size: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: heartPump 1.2s ease-in-out infinite;
+}
+
+@keyframes heartPump {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
