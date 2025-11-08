@@ -345,6 +345,15 @@
   flex-direction: column;
   gap: 14px;
 }
+
+@media (max-width: 768px) {
+  .dash-sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+  }
+}
 .dash-user {
   display: flex;
   align-items: center;
