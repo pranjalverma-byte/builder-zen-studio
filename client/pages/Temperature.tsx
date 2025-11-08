@@ -34,32 +34,22 @@ export default function Temperature() {
           </Link>
 
           <article className="card wide">
-            <header>Temperature (Celsius)</header>
+            <header>Temperature Chart 1</header>
             <ZoomedIframe
-              src="https://thingspeak.com/channels/3130559/charts/7?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              src="https://thingspeak.com/channels/3145110/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
               baseWidth={450}
               baseHeight={260}
-              title="Temperature Celsius Live Data"
+              title="Temperature Chart 1"
             />
           </article>
 
           <article className="card wide">
-            <header>Object Temp</header>
+            <header>Temperature Chart 2</header>
             <ZoomedIframe
-              src="https://thingspeak.com/channels/3130837/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
+              src="https://thingspeak.com/channels/3145110/charts/4?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&type=line&update=15"
               baseWidth={450}
               baseHeight={260}
-              title="Object Temp Live Data"
-            />
-          </article>
-
-          <article className="card wide">
-            <header>Ambient Temp</header>
-            <ZoomedIframe
-              src="https://thingspeak.com/channels/3130837/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=8&type=line"
-              baseWidth={450}
-              baseHeight={260}
-              title="Ambient Temp Live Data"
+              title="Temperature Chart 2"
             />
           </article>
         </div>
