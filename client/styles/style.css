@@ -96,6 +96,14 @@
   font-weight: 800;
   letter-spacing: 0.18em;
   color: rgba(0, 0, 0, 0.75);
+  font-size: 32px;
+}
+
+@media (max-width: 768px) {
+  .login-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
 }
 
 /* Fields */
