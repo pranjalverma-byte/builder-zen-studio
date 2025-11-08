@@ -107,7 +107,7 @@ export default function Dashboard() {
             className="card metric"
             style={{ textDecoration: "none" }}
           >
-            <header>SpO₂</header>
+            <header>Heart Rate Monitoring</header>
             <div className="big">98%</div>
             <div className="mini-graph" aria-hidden></div>
           </Link>
