@@ -305,6 +305,13 @@
       hsl(var(--brand-green-2) / 0.5),
       hsl(var(--brand-green-3) / 0.6)
     );
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .dashboard-bg {
+    padding: 12px;
+  }
 }
 
 .dash-frame {
