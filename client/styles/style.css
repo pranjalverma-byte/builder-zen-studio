@@ -383,9 +383,16 @@
   text-decoration: none;
   color: rgba(0, 0, 0, 0.7);
   background: rgba(255, 255, 255, 0.25);
+  font-size: 14px;
 }
 .dash-nav a:hover {
   background: rgba(255, 255, 255, 0.35);
+}
+
+@media (max-width: 768px) {
+  .dash-nav {
+    display: none;
+  }
 }
 .avatar-img {
   width: 36px;
