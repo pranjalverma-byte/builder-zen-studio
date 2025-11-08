@@ -2,7 +2,7 @@ import DashboardLayout from "@/components/DashboardLayout";
 import "../styles/style.css";
 import Page from "@/components/Page";
 import { Link } from "react-router-dom";
-import SensorChart from "@/components/SensorChart";
+import ZoomedIframe from "@/components/ZoomedIframe";
 
 export default function Spo2() {
   return (
