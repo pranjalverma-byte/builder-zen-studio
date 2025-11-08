@@ -16,6 +16,8 @@ export default function DashboardLayout({ children }: { children: ReactNode }) {
   };
 
   const [avatar, setAvatar] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     const load = () => setAvatar(localStorage.getItem("user_avatar"));
     load();
