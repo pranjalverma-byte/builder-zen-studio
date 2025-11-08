@@ -599,6 +599,13 @@
   gap: 18px;
   align-items: start;
 }
+
+@media (max-width: 768px) {
+  .contacts {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
 .contacts-form {
   display: grid;
   gap: 10px;
